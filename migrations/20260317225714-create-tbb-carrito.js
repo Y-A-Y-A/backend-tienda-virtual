@@ -10,16 +10,22 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       id_usuario: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull:false
       },
       estado: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:false
       },
       total: {
-        type: Sequelize.FLOAT
+        type: Sequelize.FLOAT,
+        allowNull:false,
+        defaultValue:0
       },
       fecha_creacion: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull:false,
+        defaultValue: Sequelize.NOW
       },
       createdAt: {
         allowNull: false,
