@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const tbd_carrito_detalle = require('./tbd_carrito_detalle');
 module.exports = (sequelize, DataTypes) => {
   class tbb_carrito extends Model {
     /**
@@ -34,5 +35,17 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'tbb_carrito',
   });
+  tbb_carrito.associate = (models) => {
+    tbb_carrito.belongsTo(models.tbc_usuarios, {
+      foreignKey: 'id_usuario',
+      as: 'tbc_usuarios'
+    });
+  }
+  tbb_carrito.associate = (models) => {
+    tbb_carrito.hasMany (models.tbd_carrito_detalle, {
+      foreignKey: 'id_carrito_detalle',
+      as: 'tbd_carrito_detalle'
+    });
+  }
   return tbb_carrito;
 };

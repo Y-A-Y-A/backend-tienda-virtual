@@ -1,4 +1,7 @@
 'use strict';
+
+const { Model } = require('sequelize');
+
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
@@ -11,7 +14,11 @@ module.exports = {
       },
       id_usuario: {
         type: Sequelize.INTEGER,
-        allowNull:false
+        allowNull:false,
+        references: {
+          model: 'tbc_usuarios',
+          key: 'id'
+        }
       },
       estado: {
         type: Sequelize.STRING,

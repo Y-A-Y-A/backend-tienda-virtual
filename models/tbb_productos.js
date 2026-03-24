@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   tbb_productos.init({
     id_categoria: {
       type:DataTypes.INTEGER,
-              allowNull:false
+              allowNull:false,
+              
     },
     nombre: {
       type:DataTypes.STRING(100),

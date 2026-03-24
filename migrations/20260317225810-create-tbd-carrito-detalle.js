@@ -11,11 +11,19 @@ module.exports = {
       },
       id_carrito: {
         type: Sequelize.INTEGER,
-        allowNull:false
+        allowNull:false,
+        references: {
+          model: 'tbb_carrito',
+          key: 'id'
+        }
       },
       id_producto: {
         type: Sequelize.STRING,
-        allowNull:false
+        allowNull:false,
+        references: {
+          model: 'tbb_productos',
+          key: 'id'
+        }
       },
       cantidad: {
         type: Sequelize.INTEGER,

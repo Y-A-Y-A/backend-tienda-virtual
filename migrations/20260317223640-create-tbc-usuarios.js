@@ -32,10 +32,10 @@ module.exports = {
         type: Sequelize.STRING(225),
                 allowNull:false
       },
-      rol: {
-        type: Sequelize.STRING.EMUM("admin","cliente"),
-        allowNull: false ,
-        toDefaultValue: 'cliente'
+       rol: {
+          type: Sequelize.ENUM('admin', 'cliente'),
+          allowNull: false,
+        defaultValue: 'cliente'
       },
       fecha_registro: {
         type: Sequelize.STRING

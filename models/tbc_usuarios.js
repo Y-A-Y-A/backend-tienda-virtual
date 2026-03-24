@@ -47,5 +47,12 @@ fecha_registro: {
     sequelize,
     modelName: 'tbc_usuarios',
   });
+
+  tbc_usuarios.associate = (models) => {
+    tbc_usuarios.hasMany(models.tbb_carrito, {
+      foreignKey: 'id_usuario',
+      as: 'tbb_carrito'
+    });
+  }
   return tbc_usuarios;
 };
