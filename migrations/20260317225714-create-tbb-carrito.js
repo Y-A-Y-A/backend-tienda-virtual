@@ -5,7 +5,7 @@ const { Model } = require('sequelize');
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('tbb_carritos', {
+    await queryInterface.createTable('tbb_carrito', {
       id: {
         allowNull: false,
         autoIncrement: true,

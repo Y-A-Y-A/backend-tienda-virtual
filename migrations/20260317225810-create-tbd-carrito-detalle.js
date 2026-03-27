@@ -18,7 +18,7 @@ module.exports = {
         }
       },
       id_producto: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull:false,
         references: {
           model: 'tbb_productos',
